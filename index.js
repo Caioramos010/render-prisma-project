@@ -18,6 +18,10 @@ app.get("/users", async (req, res) => {
     res.json(users);
 });
 
+app.get("/health", (req, res) => {
+    res.status(200).json({ status: "OK" , uptime: process.uptime() });
+});
+
 app.listen(3000, () => {
     console.log("Server running on http://localhost:3000");
 });
